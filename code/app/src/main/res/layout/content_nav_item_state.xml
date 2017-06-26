@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- USER ACTION PANE -->
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:alpha="0.0"
+        android:layout_height="wrap_content"
+        android:id="@+id/nav_item_state_layout">
+
+        <LinearLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#ffffff">
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:stateListAnimator="@null"
+                android:id="@+id/nav_item_host_button"
+                android:text="host"
+                android:background="#ffffff"/>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:stateListAnimator="@null"
+                android:id="@+id/nav_item_search_button"
+                android:text="search"
+                android:background="#ffffff" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:stateListAnimator="@null"
+                android:id="@+id/nav_item_post_button"
+                android:text="post"
+                android:background="#ffffff"/>
+
+        </LinearLayout>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="Price: $0.00 USD"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@xml/black_to_yellow_lettering"
+            android:textStyle="bold"
+            android:background="@xml/white_selector" />
+
+    </LinearLayout>

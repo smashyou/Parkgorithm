@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:alpha="0.0"
+    android:layout_height="wrap_content"
+    android:id="@+id/nav_item_location_layout">
+    <Button
+        android:layout_width="250dp"
+        android:layout_height="80dp"
+        android:background="@drawable/street_blip"
+        android:gravity="center_horizontal"
+        android:paddingTop="5dp"
+        android:text="Upload Your Location"
+        android:id="@+id/nav_location_button"
+        android:textColor="@xml/white_to_yellow_lettering"/>
+</LinearLayout>

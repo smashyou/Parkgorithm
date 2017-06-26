@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+    <android.support.v4.widget.DrawerLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/drawer_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <!-- The main content view -->
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/gray">
+
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:id="@+id/nav_left_ham"/>
+
+                <Button
+                    android:layout_width="70dp"
+                    android:layout_height="wrap_content"
+                    android:stateListAnimator="@null"
+                    android:layout_gravity="left"
+                    android:onClick="presentListActivity"
+                    android:background="@xml/hamburger_selector"/>
+
+                <Space
+                    android:layout_width="35dp"
+                    android:layout_height="0dp"
+                    android:id="@+id/nav_right_ham"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="Parkgorithm"
+                    android:textColor="#FFf200"/>
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:layout_alignParentRight="true"
+                    android:stateListAnimator="@null"
+                    android:background="@color/gray"/>
+            </LinearLayout>
+
+            <com.parkgo.parkgorithm.navigation.NavGestureHandler
+                android:id="@+id/map_root_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+                    xmlns:map="http://schemas.android.com/apk/res-auto"
+                    xmlns:tools="http://schemas.android.com/tools"
+                    android:id="@+id/map"
+                    android:name="com.google.android.gms.maps.SupportMapFragment"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    tools:context=".navigation.NavigationActivity">
+
+                        <RelativeLayout
+                            xmlns:android="http://schemas.android.com/apk/res/android"
+                            xmlns:tools="http://schemas.android.com/tools"
+                            android:id="@+id/map_view"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <LinearLayout
+                                xmlns:android="http://schemas.android.com/apk/res/android"
+                                xmlns:tools="http://schemas.android.com/tools"
+                                android:orientation="vertical"
+                                android:gravity="center"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/nav_item_top">
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                xmlns:android="http://schemas.android.com/apk/res/android"
+                                xmlns:tools="http://schemas.android.com/tools"
+                                android:orientation="vertical"
+                                android:gravity="center_horizontal"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/nav_item_middle">
+                            </LinearLayout>
+
+                            <LinearLayout
+                                xmlns:android="http://schemas.android.com/apk/res/android"
+                                xmlns:tools="http://schemas.android.com/tools"
+                                android:orientation="vertical"
+                                android:gravity="center_horizontal"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentBottom="true"
+                                android:id="@+id/nav_item_bottom">
+                            </LinearLayout>
+
+                        </RelativeLayout>
+                    </fragment>
+                </com.parkgo.parkgorithm.navigation.NavGestureHandler>
+        </LinearLayout>
+
+    <!-- DRAWER LAYOUT ELEMENTS
+         All elements contained
+         in represent the drawer
+         layout. To modify the
+         layout, alter code below -->
+    <LinearLayout android:id="@+id/left_drawer"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_gravity="start"
+        android:choiceMode="singleChoice"
+        android:clickable="true"
+        android:divider="@android:color/transparent"
+        android:dividerHeight="0dp"
+        android:background="@color/draw_left_blue" >
+
+        <!-- Profile Picture and User Name -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:id="@+id/profile_layout">
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/profile_picture"
+                    android:layout_gravity="center"
+                    android:background="@drawable/default_profile_photo"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/profile_name"
+                    android:gravity="center"
+                    android:textSize="20dp"
+                    android:textColor="@android:color/white"
+                    android:text="username"/>
+            </LinearLayout>
+
+            <!-- User options to select from -->
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+                        <Button
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Payment"
+                            android:id="@+id/payment_button"
+                            android:background="@xml/blue_very_dark_selector"
+                            android:textColor="@xml/white_to_yellow_lettering"
+                            android:layout_gravity="center_horizontal"
+                            android:onClick="presentPaymentActivity"/>
+
+                        <Button
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="History"
+                            android:id="@+id/history_button"
+                            android:background="@xml/blue_very_dark_selector"
+                            android:textColor="@xml/white_to_yellow_lettering"
+                            android:layout_gravity="center_horizontal"
+                            android:onClick="presentHistoryActivity"/>
+
+                        <Button
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Preferences"
+                            android:gravity="center"
+                            android:id="@+id/preference_button"
+                            android:background="@xml/blue_very_dark_selector"
+                            android:textColor="@xml/white_to_yellow_lettering"
+                            android:layout_gravity="center_horizontal"
+                            android:onClick="presentPreferenceActivity"/>
+
+                        <Button
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Rewards"
+                            android:id="@+id/rewards_button"
+                            android:background="@xml/blue_very_dark_selector"
+                            android:textColor="@xml/white_to_yellow_lettering"
+                            android:layout_gravity="center_horizontal"
+                            android:onClick="presentRewardsActivity"/>
+
+                        <Button
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Account"
+                            android:id="@+id/account_button"
+                            android:background="@xml/blue_very_dark_selector"
+                            android:textColor="@xml/white_to_yellow_lettering"
+                            android:layout_gravity="center_horizontal"
+                            android:onClick="presentAccountActivity"/>
+
+                        <Button
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Help"
+                            android:id="@+id/help_button"
+                            android:background="@xml/blue_very_dark_selector"
+                            android:textColor="@xml/white_to_yellow_lettering"
+                            android:layout_gravity="center_horizontal"
+                            android:onClick="presentHelpActivity"/>
+
+                        <Button
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Settings"
+                            android:id="@+id/settings_button"
+                            android:background="@xml/blue_very_dark_selector"
+                            android:textColor="@xml/white_to_yellow_lettering"
+                            android:layout_gravity="center_horizontal"
+                            android:onClick="presentSettingsActivity"/>
+
+                        <Button
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Sign Out"
+                            android:id="@+id/sign_out_button"
+                            android:background="@xml/blue_very_dark_selector"
+                            android:textColor="@xml/white_to_yellow_lettering"
+                            android:layout_gravity="center_horizontal"
+                            android:onClick="signOutApp"/>
+                </LinearLayout>
+            </ScrollView>
+        </LinearLayout>
+    </android.support.v4.widget.DrawerLayout>
+
+

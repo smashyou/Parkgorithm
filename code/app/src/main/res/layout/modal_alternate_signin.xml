@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#151515">
+
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Google+"
+            android:id="@+id/google_plus_sign_in_btn"
+            android:background="@xml/blue_dark_selector"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/social_sign_in_facebook_btn"
+            android:text="Facebook"
+            android:background="@xml/blue_light_selector"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Cancle"
+            android:id="@+id/social_sign_in_cancel_btn"
+            android:layout_gravity="center_horizontal"
+            />
+    </LinearLayout>
+
+
+</LinearLayout>
